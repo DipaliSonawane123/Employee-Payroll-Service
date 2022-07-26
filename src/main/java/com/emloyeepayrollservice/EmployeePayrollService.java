@@ -1,5 +1,7 @@
 package com.emloyeepayrollservice;
 
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,5 +36,14 @@ public class EmployeePayrollService {
 
     private void writeEmployeePayrollData() {
         System.out.println("\nWriting Employee Payroll Data to Console\n" + employeePayrollList);
+    }
+    public static boolean deleteFiles(File contentsToDelete) {
+        File[] allContents = contentsToDelete.listFiles();
+        if (allContents != null) {
+            for (File file : allContents) {
+                deleteFiles(file);
+            }
+        }
+        return contentsToDelete.delete();
     }
 }
