@@ -46,16 +46,24 @@ public class EmployeePayrollService {
         }
     }
 
+    /**
+     * UC5
+     *
+     * @param printTo
+     */
     public void printData(IOService printTo) {
         if (printTo.equals(IOService.FILE_IO))
             new EmployeePayrollFileIOService().printData();
     }
 
+    /**
+     * UC5
+     *
+     * @return
+     */
     public long countEntries() {
         return new EmployeePayrollFileIOService().countEntries();
     }
-
-
     public static boolean deleteFiles(File contentsToDelete) {
         File[] allContents = contentsToDelete.listFiles();
         if (allContents != null) {

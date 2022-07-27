@@ -1,4 +1,5 @@
 package com.emloyeepayrollservice;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,6 +27,9 @@ public class EmployeePayrollFileIOService {
         }
     }
 
+    /**
+     * UC5
+     */
     public void printData() {
         try {
             Files.lines(new File(FILE_NAME).toPath()).forEach(System.out::println);
@@ -34,6 +38,11 @@ public class EmployeePayrollFileIOService {
         }
     }
 
+    /**
+     * UC5
+     *
+     * @return
+     */
     public long countEntries() {
         long entries = 0;
         try {
